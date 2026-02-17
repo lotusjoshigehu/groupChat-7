@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat UI</title>
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- LEFT SIDEBAR -->
+  <div class="sidebar">
+
+    <div class="sidebar-header">
+      <h3>Chats</h3>
+    </div>
+
+    <div class="search">
+      <input type="text" placeholder="Search or start new chat">
+    </div>
+
+    <div class="add-contact">
+       <input type="text" id="newContact" placeholder="Enter contact number">
+       <button type="button" id="addBtn">Add</button>
+    </div>
+
+  <div class="create-group-wrapper">
+  <button id="createGroupBtn" class="create-group-btn">
+    + Create Group
+  </button>
+</div>
+
+
+
+    <!-- IMPORTANT: Keep empty -->
+    <div class="chat-list">
+    </div>
+
+  </div>
+
+<!-- RIGHT CHAT AREA -->
+<div class="chat-area">
+
+  <!-- HEADER -->
+  <div class="chat-header">
+    <div>
+      <h4 id="chatName">Select a chat</h4>
+      <span id="userphone"></span>
+      <div id="groupMembers" style="font-size:13px;color:gray;"></div>
+
+    </div>
+  </div>
+
+  <!-- DUSTBIN ICON -->
+  
+  <div class="group-actions">
+    <button id="addMemberBtn" class="add-member-btn">+</button>
+    <img src="dustbin.png" id="deleteBtn" class="dustbin-icon">
+</div>
+
+
+  <!-- MESSAGES -->
+  <div class="messages"></div>
+
+  <!-- INPUT -->
+  <div class="input-box">
+    <input type="text" id="messageInput" placeholder="Type a message">
+    <button type="submit" id="sendBtn">Send</button>
+    <input type="file" id="fileInput" hidden>
+    <button type="button" id="fileBtn">+</button>
+
+
+  </div>
+
+</div>
+
+
+</div>
+<div id="addMemberModal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Add Member</h3>
+
+    <input type="text" id="memberNameInput" placeholder="Member Name">
+    <input type="text" id="memberPhoneInput" placeholder="Member Phone">
+
+    <div class="modal-buttons">
+      <button id="confirmAddMember">Add</button>
+      <button id="closeModal">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div id="imagePreviewModal" class="image-modal" onclick="closeImagePreview()">
+  <img id="previewImage">
+</div>
+
+
+<script src="http://localhost:4000/socket.io/socket.io.js"></script>
+<script src="chat.js"></script>
+
+
+</body>
+</html>
